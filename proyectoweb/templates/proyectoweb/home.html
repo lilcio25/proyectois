@@ -28,13 +28,13 @@
 
 <body>
 
-  <!-- ======= Header ======= -->
+  <!-- Cabezera -->
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a class="logo d-flex align-items-center">
+      <a class="logo d-flex align-items-center" href="{%url 'home'%">
         <img src="{% static 'imagenes/logo2.jpg' %}" alt="">
-        <span class="d-none d-lg-block">vdl</span>
+        <span class="d-none d-lg-block">Vinos Don Rogelio</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -42,18 +42,16 @@
       <ul class="d-flex align-items-center">
         <li class="nav-item dropdown pe-3">
 
-          <a class="nav-link nav-profile d-flex align-items-center pe-0" data-bs-toggle="dropdown">
+          <button class="nav-link nav-profile d-flex align-items-center pe-0" data-bs-toggle="dropdown">
             <img src="{% static 'imagenes/logousuario.png' %}" alt="Profile" class="rounded-circle">
             <span class="d-none d-md-block dropdown-toggle ps-2">Select a usuario</span>
-          </a><!-- End Profile Iamge Icon -->
-
+          </button>
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li>
               <hr class="dropdown-divider">
             </li>
-
             <li>
-              <a class="dropdown-item d-flex align-items-center">
+              <a class="dropdown-item d-flex align-items-center" href="{% url 'perfil'%}">
                 <i class="bi bi-person"></i>
                 <span>Mi Perfil</span>
               </a>
@@ -61,9 +59,8 @@
             <li>
               <hr class="dropdown-divider">
             </li>
-
             <li>
-              <a class="dropdown-item d-flex align-items-center">
+              <a class="dropdown-item d-flex align-items-center" href="{% url 'config'%}">
                 <i class="bi bi-gear"></i>
                 <span>Ajustes</span>
               </a>
@@ -82,15 +79,13 @@
               </a>
             </li>
 
-          </ul><!-- End Profile Dropdown Items -->
-        </li><!-- End Profile Nav -->
-
+          </ul>
+        </li>
       </ul>
-    </nav><!-- End Icons Navigation -->
+    </nav>
+  </header>
 
-  </header><!-- End Header -->
-
-  <!-- ======= Sidebar ======= -->
+  <!-- Barra Lateral -->
   <aside id="sidebar" class="sidebar">
 
     <ul class="sidebar-nav" id="sidebar-nav">
@@ -98,25 +93,19 @@
         <a class="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse">
           <i class="bi bi-menu-button-wide"></i><span>Pedidos</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav" href="{%url 'login'%}">
+        <ul id="components-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a>
+            <a href="{%url 'activos'%}">
               <i class="bi bi-circle"></i><span>Activos</span>
             </a>
           </li>
           <li>
-            <a>
+            <a href="{%url 'pasados'%}">
               <i class="bi bi-circle"></i><span>Pasados</span>
             </a>
           </li>
-          <li>
-            <a>
-              <i class="bi bi-circle"></i><span>Historial</span>
-            </a>
-          </li>
         </ul>
-      </li><!-- End Components Nav -->
-
+      </li>
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse">
           <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -133,30 +122,7 @@
             </a>
           </li>
         </ul>
-      </li><!-- End Forms Nav -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse">
-          <i class="bi bi-bar-chart"></i><span>Charts</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="charts-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a>
-              <i class="bi bi-circle"></i><span>Chart.js</span>
-            </a>
-          </li>
-          <li>
-            <a>
-              <i class="bi bi-circle"></i><span>ApexCharts</span>
-            </a>
-          </li>
-          <li>
-            <a>
-              <i class="bi bi-circle"></i><span>ECharts</span>
-            </a>
-          </li>
-        </ul>
-      </li><!-- End Charts Nav -->
-
+      </li>
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse">
           <i class="bi bi-gem"></i><span>Icons</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -178,33 +144,22 @@
             </a>
           </li>
         </ul>
-      </li><!-- End Icons Nav -->
+      </li>
 
-      <li class="nav-heading">Pages</li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href ="#">
-          <i class="bi bi-dash-circle"></i>
-          <span>Productos</span>
+        <li class="nav-item">
+        <a class="nav-link collapsed" data-bs-target="#icons-nav"  href ="{% url 'shop' %}">
+          <i class="bi bi-cart"></i><span>Productos</span>
         </a>
-      </li><!-- End Error 404 Page Nav -->
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href ="#">
-          <i class="bi bi-file-earmark"></i>
-          <span>Algo</span>
-        </a>
-      </li><!-- End Blank Page Nav -->
-
+      </li>
     </ul>
 
-  </aside><!-- End Sidebar-->
+  </aside>
 
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Coito</h1>
-    </div><!-- End Page Title -->
+      <h1>Home</h1>
+    </div>
 
     <section class="section dashboard">
       <div class="row">
@@ -357,81 +312,6 @@
 
               </div>
             </div><!-- End Recent Sales -->
-
-            <!-- Top Selling -->
-            <div class="col-12">
-              <div class="card top-selling overflow-auto">
-
-                <div class="filter">
-                  <a class="icon" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li class="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-
-                    <li><a class="dropdown-item" >Today</a></li>
-                    <li><a class="dropdown-item" >This Month</a></li>
-                    <li><a class="dropdown-item" >This Year</a></li>
-                  </ul>
-                </div>
-
-                <div class="card-body pb-0">
-                  <h5 class="card-title">Top Selling <span>| Today</span></h5>
-
-                  <table class="table table-borderless">
-                    <thead>
-                      <tr>
-                        <th scope="col">Preview</th>
-                        <th scope="col">Product</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Sold</th>
-                        <th scope="col">Revenue</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row"><a><img src="assets/img/product-1.jpg" alt=""></a></th>
-                        <td><a class="text-primary fw-bold">Ut inventore ipsa voluptas nulla</a></td>
-                        <td>$64</td>
-                        <td class="fw-bold">124</td>
-                        <td>$5,828</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a><img src="assets/img/product-2.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Exercitationem similique doloremque</a></td>
-                        <td>$46</td>
-                        <td class="fw-bold">98</td>
-                        <td>$4,508</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-3.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Doloribus nisi exercitationem</a></td>
-                        <td>$59</td>
-                        <td class="fw-bold">74</td>
-                        <td>$4,366</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-4.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Officiis quaerat sint rerum error</a></td>
-                        <td>$32</td>
-                        <td class="fw-bold">63</td>
-                        <td>$2,016</td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#"><img src="assets/img/product-5.jpg" alt=""></a></th>
-                        <td><a href="#" class="text-primary fw-bold">Sit unde debitis delectus repellendus</a></td>
-                        <td>$79</td>
-                        <td class="fw-bold">41</td>
-                        <td>$3,239</td>
-                      </tr>
-                    </tbody>
-                  </table>
-
-                </div>
-
-              </div>
-            </div><!-- End Top Selling -->
-
           </div>
         </div><!-- End Left side columns -->
 
@@ -498,41 +378,6 @@
 
             </div>
           </div><!-- End Recent Activity -->
-          <!-- News & Updates Traffic -->
-          <div class="card">
-            <div class="filter">
-              <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
-              <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                <li class="dropdown-header text-start">
-                  <h6>Filter</h6>
-                </li>
-
-                <li><a class="dropdown-item" href="#">Today</a></li>
-                <li><a class="dropdown-item" href="#">This Month</a></li>
-                <li><a class="dropdown-item" href="#">This Year</a></li>
-              </ul>
-            </div>
-
-            <div class="card-body pb-0">
-              <h5 class="card-title">News &amp; Updates <span>| Today</span></h5>
-
-              <div class="news">
-                <div class="post-item clearfix">
-                  <img src="assets/img/news-1.jpg" alt="">
-                  <h4><a>Nihil blanditiis at in nihil autem</a></h4>
-                  <p>Sit recusandae non aspernatur laboriosam. Quia enim eligendi sed ut harum...</p>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="assets/img/news-2.jpg" alt="">
-                  <h4><a>Quidem autem et impedit</a></h4>
-                  <p>Illo nemo neque maiores vitae officiis cum eum turos elan dries werona nande...</p>
-                </div>
-              </div><!-- End sidebar recent posts-->
-
-            </div>
-          </div><!-- End News & Updates -->
-
         </div><!-- End Right side columns -->
 
       </div>
@@ -540,10 +385,10 @@
 
   </main><!-- End #main -->
 
-  <!-- ======= Footer ======= -->
+<!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">
-      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+      &copy; Copyright <strong><span>Claudio Acevedo</span></strong>. Todos los derechos reservados
     </div>
     <div class="credits">
     </div>
